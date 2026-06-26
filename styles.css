@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
+body {
+    height: 540px;
+}
+
 #clock {
     background-color: rgba(0, 0, 0, 0);
     border: solid black 20px;
@@ -7,6 +11,7 @@
     height: 500px;
     border-radius: 50%;
     position: relative;
+    margin: 30px auto;
 }
 
 .number {
@@ -75,19 +80,45 @@
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    z-index: 1;
+    z-index: 3;
 }
 
 .handle__second {
     background-color: red;
     transform: translateX(-50%) rotate(90deg);
+    z-index: 2;
 }
 
 .handle__minute {
     height: 180px;
+    z-index: 2;
 }
 
 .handle__hour {
-    height: 140px;
+    height: 120px;
     transform: translateX(-50%) rotate(60deg);
+    z-index: 2;
+}
+
+.milliseconds__face {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translateX(-50%);
+    border: solid black 8px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.milliseconds__handle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 50px;
+    width: 5px;
+    background-color: red;
+    transform: translateX(-50%);
+    transform-origin: top;
 }
