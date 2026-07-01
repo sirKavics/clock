@@ -1,31 +1,31 @@
-const secondHandle = document.querySelector(".handle__second");
-const minuteHandle = document.querySelector(".handle__minute");
-const hourHandle = document.querySelector(".handle__hour");
+// const secondHandle = document.querySelector(".handle__second");
+// const minuteHandle = document.querySelector(".handle__minute");
+// const hourHandle = document.querySelector(".handle__hour");
 
-setInterval(() => {
-    setHandles()
-},1000)
+// setInterval(() => {
+//     setHandles()
+// },1000)
 
-function setHandles() {
-  const date = new Date();
+// function setHandles() {
+//   const date = new Date();
 
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
+//   const hours = date.getHours();
+//   const minutes = date.getMinutes();
+//   const seconds = date.getSeconds();
 
-  // 60 seconds in a minute
-  // One minute increments by 6 degrees
-  // 6 / 60
-  const extraMinutesAngle = seconds * 0.1;
-  const minutesAngle = minutes * 6 + extraMinutesAngle;
+//   // 60 seconds in a minute
+//   // One minute increments by 6 degrees
+//   // 6 / 60
+//   const extraMinutesAngle = seconds * 0.1;
+//   const minutesAngle = minutes * 6 + extraMinutesAngle;
 
-  const extraHoursAngle = minutes * 0.5;
-  const hoursAngle = hours * 30 + extraHoursAngle;
+//   const extraHoursAngle = minutes * 0.5;
+//   const hoursAngle = hours * 30 + extraHoursAngle;
 
-  secondHandle.style.transform = `translateX(-50%) rotate(${seconds * 6}deg)`;
-  minuteHandle.style.transform = `translateX(-50%) rotate(${minutesAngle}deg)`;
-  hourHandle.style.transform = `translateX(-50%) rotate(${hoursAngle}deg)`;
-}
+//   secondHandle.style.transform = `translateX(-50%) rotate(${seconds * 6}deg)`;
+//   minuteHandle.style.transform = `translateX(-50%) rotate(${minutesAngle}deg)`;
+//   hourHandle.style.transform = `translateX(-50%) rotate(${hoursAngle}deg)`;
+// }
 
 // PRACTICE RUN
 
@@ -53,7 +53,9 @@ function setHandles() {
   const extraMinutesAngle = seconds * 0.1;
   const minuteAngle = minutes * 6 + extraMinutesAngle;
 
-  const secondsAngle = seconds * 6;
+  const extraSecondsAngle = milliseconds * 0.006;
+  const secondsAngle = seconds * 6 + extraSecondsAngle;
+
   const millisecondsAngle = milliseconds * 0.36;
 
   hoursHandle.style.transform = `translateX(-50%) rotate(${hourAngle}deg)`;
